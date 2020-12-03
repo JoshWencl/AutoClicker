@@ -48,6 +48,14 @@ namespace clicker
                     i.mi.mouseData = 0;
                     i.mi.time = 0;
                     SendInput(1, ref i, Marshal.SizeOf(i));
+                    System.Threading.Thread.Sleep(100);
+                    i = new INPUT();
+                    i.type = INPUT_MOUSE;
+                    i.mi.dx = 0;
+                    i.mi.dy = 0;
+                    i.mi.dwExtraInfo = IntPtr.Zero;
+                    i.mi.mouseData = 0;
+                    i.mi.time = 0;
                     i.mi.dwFlags = MOUSEEVENTF_LEFTUP;
                     SendInput(1, ref i, Marshal.SizeOf(i));
                     System.Threading.Thread.Sleep(sleep);
